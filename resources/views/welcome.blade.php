@@ -39,7 +39,7 @@
             }
 
             .header .container {
-                padding: 30px 0;
+                padding: 30px 0 0 0;
             }
 
             /* Main */
@@ -59,7 +59,7 @@
             }
 
             .main .btn {
-                margin-top: 30px;
+                margin: 30px 0;
                 color: #fff;
                 background: rgba(0,240,190,0.25);
                 border: 0px;
@@ -95,7 +95,7 @@
 
                 <img src="img/logo.svg" width="50">
                 <h1>Join Pocketbook</h1>
-                 @if (Route::has('login'))
+                 {{-- @if (Route::has('login'))
                             <div class="top-right links">
                                 @auth
                                     <a href="{{ url('/home') }}">Home</a>
@@ -109,7 +109,7 @@
                                     @endif
                                 @endauth
                             </div>
-                            @endif
+                            @endif --}}
             </div>
         </header>
         <main class="main">
@@ -162,13 +162,15 @@
                                 @auth
                                     <a href="{{ url('/home') }}">Home</a>
                                 @else
-                                {{-- <a href="{{ route('login') }}"><button type="submit" class="btn btn-primary">{{ __('Log in') }}
-                                            </button></a> --}}
 
                                 @if (Route::has('register'))
-                                        <a href="{{ route('register') }}"><button type="submit" class="btn btn-primary">
+                                        <a href="{{ route('register') }}"><button type="submit" class="btn btn-primary btn-block">
                                                 {{ __('Register') }}</button></a>
-                                    @endif
+                                 @endif
+
+                                 Already have an account?
+                                <a href="{{ route('login') }}">{{ __('Log in') }} </a>
+
                                 @endauth
                             </div>
                             @endif
