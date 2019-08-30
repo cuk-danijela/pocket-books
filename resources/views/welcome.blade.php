@@ -20,7 +20,7 @@
 
                 <img src="img/logo.svg" width="50">
                 <h1>Join Pocketbook</h1>
-                 {{-- @if (Route::has('login'))
+                 @if (Route::has('login'))
                             <div class="top-right links">
                                 @auth
                                     <a href="{{ url('/home') }}">Home</a>
@@ -34,14 +34,14 @@
                                     @endif
                                 @endauth
                             </div>
-                            @endif --}}
+                            @endif
             </div>
         </header>
         <main class="main">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
-                         <form method="POST" action="{{ route('register') }}">
+                         {{-- <form method="POST" action="{{ route('register') }}">
                         @csrf
                             <div class="form-group">
                                 <label for="name" class="col-form-label text-md-right">{{ __('Full name') }}</label>
@@ -102,7 +102,7 @@
 
                         </div>
 
-                        </form>
+                        </form> --}}
                     </div>
                 </div>
             </div>

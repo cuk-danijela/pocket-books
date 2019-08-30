@@ -28,15 +28,16 @@
             <button type="button" class="btn btn-dark float-left">Edit</button>
             </a>
             <form action="{{ route('admin.users.destroy', $user->id) }}" method="POST">
-                @csrf
+                {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button type="button" class="btn btn-dark float-left">Delete</button>
+                <button type="submit" class="btn btn-dark float-left">Delete</button>
                 </form>
           </th>
       </tr>
    @endforeach
   </tbody>
 </table>
+{{ $users->links() }}
                 </div>
             </div>
         </div>
