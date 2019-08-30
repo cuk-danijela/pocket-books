@@ -31,15 +31,6 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        {{-- @hasrole('author') --}}
-                        <li class="nav-item">
-                            <a href="{{ route('admin.users.index') }}">Manage Users</a>
-                        </li>
-                        {{-- @endhasrole --}}
-                    </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -53,6 +44,19 @@
                                 </li>
                             @endif --}}
                         @else
+                            {{-- @if(Auth::check() && Auth::user()->is('admin')) --}}
+                            {{-- @role('admin') --}}
+                            <li class="nav-item">
+                                <a href="{{ route('admin.users.index') }}">Manage Users</a>
+                            </li>
+                            {{-- @endrole --}}
+
+                               @impersonate()
+                            <li class="nav-item">
+                                <a href="{{ route('admin.impersonate.destroy') }}">Stop impersonate</a>
+                            </li>
+                            @endimpersonate
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
