@@ -36,61 +36,58 @@
             @yield('content')
         </main>
 
-         <footer class="footer">
-              <div class="container collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                        <li class="nav-item">About</li>
-                        <li class="nav-item">Contact</li>
-                        <li class="nav-item">Help Center</li>
-                        @if (Route::has('login'))
-                        <li class="nav-item">
+        <footer class="footer">
+            <div class="container collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                    <li class="nav-item">About</li>
+                    <li class="nav-item">Contact</li>
+                    <li class="nav-item">Help Center</li>
+                    @if (Route::has('login'))
+                    <li class="nav-item">
                         <a class="nav-link" href="{{URL::to('/')}}">{{ __('Register') }}</a>
-                        </li>
-                        @endif
+                    </li>
+                    @endif
 
-                        @if (Route::has('register'))
-                        <li class="nav-item">
+                    @if (Route::has('register'))
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @endif
+                    </li>
+                    @endif
 
-                        @else
+                    @else
+                    @impersonate()
+                    <li class="nav-item">
+                        <a href="{{ route('admin.impersonate.destroy') }}">Stop impersonate</a>
+                    </li>
+                    @endimpersonate
+                </ul>
+                <div class="dropdown pull-right" aria-labelledby="navbarDropdown">
+                    <button class="btn dropdown-toggle" type="button" style="margin:0"
+                        data-toggle="dropdown">{{ Auth::user()->name }} <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"> {{ __('Profile') }} </a></li>
+                        <li><a class="dropdown-item" href="#"> {{ __('Help') }} </a></li>
                         {{-- @if(Auth::check() && Auth::user()->is('admin')) --}}
                         {{-- @role('admin') --}}
                         <li class="nav-item">
                             <a href="{{ route('admin.users.index') }}">Manage Users</a>
                         </li>
                         {{-- @endrole --}}
-
-
-                        @impersonate()
-                        <li class="nav-item">
-                            <a href="{{ route('admin.impersonate.destroy') }}">Stop impersonate</a>
+                        <li> <a class="dropdown-item" href="{{ route('logout') }}"
+                                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }} </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
                         </li>
-                        @endimpersonate
-                    </ul>
-                    <ul class="pull-right">
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#"> {{ __('Profile') }} </a>
-                                <a class="dropdown-item" href="#"> {{ __('Help') }} </a>
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"> {{ __('Logout') }} </a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                    style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        </ul>
-                        @endguest
                     </ul>
                 </div>
+                @endguest
+                </ul>
+            </div>
         </footer>
     </div>
 </body>

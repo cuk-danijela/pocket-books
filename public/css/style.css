@@ -29,6 +29,10 @@ body {
     margin: 10px !important;
 }
 
+.dropdown-menu>li>a {
+    padding: 0 !important;
+}
+
 
 /* Header */
 
@@ -61,7 +65,8 @@ form input.form-control {
     border-radius: 0px;
 }
 
-.main .btn {
+.main .btn,
+.footer .btn {
     margin: 30px 0;
     color: #fff;
     background: rgba(0, 240, 190, 0.25);
