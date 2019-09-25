@@ -104,14 +104,14 @@
             </div>
         </main>
         <footer class="footer">
-              <div class="container collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">About</li>
-                        <li class="nav-item">Contact</li>
-                        <li class="nav-item">Help Center</li>
-                    </ul>
-                </div>
+            <div class="container collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">About</li>
+                    <li class="nav-item">Contact</li>
+                    <li class="nav-item">Help Center</li>
+                </ul>
+            </div>
         </footer>
     </div>
 </body>

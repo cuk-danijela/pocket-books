@@ -17,6 +17,18 @@ body {
     max-width: 940px;
 }
 
+.text-white {
+    color: #fff;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.btn-table {
+    margin: 10px !important;
+}
+
 
 /* Header */
 
@@ -55,6 +67,12 @@ form input.form-control {
     background: rgba(0, 240, 190, 0.25);
     border: 0px;
     border-radius: 0px;
+}
+
+#users_table>thead>tr>th,
+#users_table>tbody>tr>th {
+    vertical-align: middle;
+    text-align: center;
 }
 
 
