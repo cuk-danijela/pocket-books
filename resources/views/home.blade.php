@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <div class="pull-right">
-                        <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
+                        <a class="btn btn-success" href="{{ route('products.create') }}"><i class="far fa-plus-square"></i> Create New Product</a>
                     </div>
                 </div>
             </div>
@@ -42,15 +42,17 @@
                     <th>Image</th>
                     <th>Title</th>
                     <th>Author</th>
+                    <th>Description</th>
                     <th>Year</th>
                     <th width="280px">Action</th>
                 </tr>
                 @foreach ($products as $product)
                 <tr>
                     <td>{{ ++$i }}</td>
-                    <td><img src="{{ $product->image }}" width="200px"/></td>
+                    <td><img src="/images/{{ Session::get('path') }}" class="img-thumbnail" width="200" /></td>
                     <td>{{ $product->title }}</td>
                     <td>{{ $product->author }}</td>
+                    <td>{{ $product->description }}</td>
                     <td>{{ $product->year }}</td>
                     <td>
                         <form action="{{ route('products.destroy',$product->id) }}" method="POST">

@@ -1,28 +1,54 @@
 @extends('layouts.app')
-@section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2> Show Product</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('products.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
+@section('title', 'View Product')
 
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Name:</strong>
-                {{ $product->name }}
+@section('content')
+<div class="flex-center position-ref full-height">
+    <main class="main">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 margin-tb">
+
+                    <div class="pull-right">
+                        <a class="btn btn-primary" href="{{ route('products.index') }}"> <i
+                                class="far fa-hand-point-left"></i> Back</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <div class="form-group">
+                        <img src="/images/{{ Session::get('path') }}" class="img-responsive img-thumbnail img-width" width="300" />
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-8">
+                    <div class="form-group">
+                        <strong>Title:</strong>
+                        {{ $product->title }}
+                    </div>
+                    <div class="form-group">
+                        <strong>Author:</strong>
+                        {{ $product->author }}
+                    </div>
+                    <div class="form-group">
+                        <strong>Description:</strong>
+                        {{ $product->description }}
+                    </div>
+                    <div class="form-group">
+                        <strong>Released:</strong>
+                        {{ $product->year }}
+                    </div>
+                    <form action="{{ route('products.destroy',$product->id) }}" method="POST">
+                        <a class="btn btn-primary" href="{{ route('products.edit',$product->id) }}"><i
+                                class="far fa-edit"></i> Edit</a>
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i> Delete</button>
+                    </form>
+                </div>
+
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Details:</strong>
-                {{ $product->detail }}
-            </div>
-        </div>
-    </div>
+    </main>
+</div>
 @endsection

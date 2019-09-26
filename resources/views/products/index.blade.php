@@ -6,7 +6,7 @@
             <div class="pull-left">
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New Product</a>
+                <a class="btn btn-success" href="{{ route('products.create') }}"><i class="far fa-plus-square"></i> Create New Product</a>
             </div>
         </div>
     </div>

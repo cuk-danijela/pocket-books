@@ -31,5 +31,8 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'auth.admin'])->
     Route::resource('/users', 'UserController', ['except' => ['show', 'create', 'store']]);
     Route::get('/impersonate/user/{id}', 'ImpersonateController@index')->name('impersonate');
 });
-
+/* Impresonate user */
 Route::get('/admin/impersonate/destroy', 'Admin\ImpersonateController@destroy')->name('admin.impersonate.destroy');
+/* Upload image */
+Route::get('/uploadfile', 'UploadfileController@index');
+Route::post('/uploadfile', 'UploadfileController@upload');
