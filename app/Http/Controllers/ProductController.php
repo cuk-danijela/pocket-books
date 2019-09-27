@@ -46,7 +46,19 @@ class ProductController extends Controller
             'image' => 'required|image|max:2048'
         ]);
 
-        Product::create($request->all());
+        $image = $request->file('image');
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
+
+        Product::create(
+            [
+                'image' => $new_name,
+                'title' => $request->title,
+                'author' => $request->author,
+                'description' => $request->description,
+                'year' => $request->year
+            ]
+        );
 
         return redirect()->route('products.index')
             ->with('success', 'Product created successfully.');
@@ -87,10 +99,23 @@ class ProductController extends Controller
             'title' => 'required',
             'author' => 'required',
             'description' => 'required',
-            'year' => 'required'
+            'year' => 'required',
+            'image' => 'required'
         ]);
 
-        $product->update($request->all());
+        $image = $request->file('image');
+        $new_name = rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $new_name);
+
+        $product->update(
+            [
+                'image' => $new_name,
+                'title' => $request->title,
+                'author' => $request->author,
+                'description' => $request->description,
+                'year' => $request->year
+            ]
+        );
 
         return redirect()->route('products.index')
             ->with('success', 'Product updated successfully');

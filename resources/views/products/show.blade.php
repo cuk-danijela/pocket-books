@@ -9,19 +9,17 @@
                 <div class="col-lg-12 margin-tb">
 
                     <div class="pull-right">
-                        <a class="btn btn-primary" href="{{ route('products.index') }}"> <i
+                        <a class="btn btn-primary" href="{{ route('home') }}"> <i
                                 class="far fa-hand-point-left"></i> Back</a>
                     </div>
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-4">
-                    <div class="form-group">
-                        <img src="/images/{{ Session::get('path') }}" class="img-responsive img-thumbnail img-width" width="300" />
-                    </div>
+                <div class="col-xs-12 col-sm-12 col-md-5">
+                        <img src="/images/{{ $product->image }}" class="img-thumbnail" />
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-8">
+                <div class="col-xs-12 col-sm-12 col-md-7">
                     <div class="form-group">
                         <strong>Title:</strong>
                         {{ $product->title }}

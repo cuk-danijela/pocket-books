@@ -25,17 +25,35 @@ body {
     display: inline;
 }
 
+.align-center {
+    text-align: center;
+}
+
 .btn-table {
     margin: 10px !important;
 }
 
-.dropdown-menu>li>a {
+ul.dropdown-menu {
+    overflow: auto;
+    max-height: 250px;
+    width: auto;
+}
+
+.user_menu.show {
     padding: 0 !important;
+}
+
+.dropdown-menu>li>a {
+    padding-right: 0 !important;
 }
 
 .img-width {
     width: 250px;
     height: auto;
+}
+
+.margin-none {
+    margin: 0 !important;
 }
 
 
@@ -80,7 +98,9 @@ form input.form-control {
 }
 
 #users_table>thead>tr>th,
-#users_table>tbody>tr>th {
+#users_table>tbody>tr>th,
+#products_table>thead>tr>th,
+#products_table>tbody>tr>th {
     vertical-align: middle;
     text-align: center;
 }

@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-right">
-                        <a class="btn btn-primary" href="{{ route('products.index') }}">
+                        <a class="btn btn-primary" href="{{ route('home') }}">
                             <i class="far fa-hand-point-left"></i> Back</a>
                     </div>
                 </div>
@@ -51,22 +51,16 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Released:</strong>
-                            <input type="number" name="year" min="1" class="form-control" placeholder="Year">
+                            <input type="number" name="year" min="1" maxlength="4" class="form-control" placeholder="Year">
                         </div>
                     </div>
-                    @if ($message = Session::get('success'))
-                    <img src="/images/{{ Session::get('path') }}" width="300" />
-                    @endif
-                    <form method="post" action="{{url('/uploadfile')}}" enctype="multipart/form-data">
-                        @csrf
-                        <div class="form-group">
-                            <label class="col-md-3">Select File for Upload:</label>
-                            <div class="col-md-8">
-                               <input type="file" name="select_file" />
-                            </div>
+                    <div class="form-group">
+                        <label class="col-md-3">Select Image for Upload:</label>
+                        <div class="col-md-8">
+                            <input type="file" name="image" />
                         </div>
-                        </form>
-                        <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <button type="submit" class="btn btn-primary"><i class="far fa-save"></i> Submit</button>
                     </div>
                 </div>

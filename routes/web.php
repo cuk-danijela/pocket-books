@@ -34,5 +34,4 @@ Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'auth.admin'])->
 /* Impresonate user */
 Route::get('/admin/impersonate/destroy', 'Admin\ImpersonateController@destroy')->name('admin.impersonate.destroy');
 /* Upload image */
-Route::get('/uploadfile', 'UploadfileController@index');
-Route::post('/uploadfile', 'UploadfileController@upload');
+Route::get('products/edit{id}', 'ProductController@update');

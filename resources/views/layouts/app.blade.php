@@ -27,7 +27,7 @@
     <div id="app">
         <header class="header">
             <nav class="navbar navbar-expand-md">
-                <a href="{{URL::to('/')}}"><img src="{{ asset('logo.svg') }}" width="50" alt="Logo"></a>
+                <a href="{{URL::to('/home')}}"><img src="{{ asset('logo.svg') }}" width="50" alt="Logo"></a>
             </nav>
             <h1>@yield('title')</h1>
         </header>
@@ -42,11 +42,12 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-                    @guest
                     <li class="nav-item">About</li>
                     <li class="nav-item">Contact</li>
                     <li class="nav-item">Help Center</li>
-                    @if (Route::has('login'))
+
+                    @guest
+                    {{-- @if (Route::has('login'))
                     <li class="nav-item">
                         <a class="nav-link" href="{{URL::to('/')}}">{{ __('Register') }}</a>
                     </li>
@@ -56,7 +57,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                     </li>
-                    @endif
+                    {{-- @endif --}}
 
                     @else
                     @impersonate()
@@ -66,17 +67,22 @@
                     @endimpersonate
                 </ul>
                 <div class="dropdown pull-right" aria-labelledby="navbarDropdown">
-                    <button class="btn dropdown-toggle" type="button" style="margin:0"
-                        data-toggle="dropdown"><i class="far fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span></button>
-                    <ul class="dropdown-menu">
+                    <button class="btn dropdown-toggle" type="button" style="margin:0" data-toggle="dropdown"><i
+                            class="far fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span></button>
+                    <ul class="dropdown-menu user_menu">
                         <li><a class="dropdown-item" href="#"> {{ __('Profile') }} </a></li>
                         <li><a class="dropdown-item" href="#"> {{ __('Help') }} </a></li>
-                        {{-- @if(Auth::check() && Auth::user()->is('admin')) --}}
-                        {{-- @role('admin') --}}
+                        @if (auth()->check())
+                        @if (auth()->user()->isAdmin())
                         <li class="nav-item">
                             <a href="{{ route('admin.users.index') }}">Manage Users</a>
                         </li>
-                        {{-- @endrole --}}
+                        @else
+                        Hello standard user
+                        @endif
+                        @endif
+
+
                         <li> <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }} </a>
