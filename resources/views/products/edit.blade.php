@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-lg-12 margin-tb">
                     <div class="pull-right">
-                        <a class="btn btn-primary" href="{{ route('products.index') }}"> <i
+                        <a class="btn btn-primary" href="{{ route('home') }}"> <i
                                 class="far fa-hand-point-left"></i> Back</a>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12">
                         <div class="form-group">
                             <strong>Description:</strong>
-                            <textarea class="form-control" rows="4" cols="50" name="description"
+                            <textarea class="form-control" rows="6" cols="50" name="description"
                                 placeholder="Description">
                                 {{ $product->description }}
                             </textarea>
@@ -61,7 +61,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3">Select File for Upload:</label>
+                        <label class="col-md-3">Select Image for Upload:</label>
                         <div class="col-md-8">
                             <input type="file" name="image" value="{{ $product->image }}"/>
                         </div>

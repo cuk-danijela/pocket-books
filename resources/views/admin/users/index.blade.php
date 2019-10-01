@@ -8,7 +8,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <table id="users_table" class="table table-responsive table-condensed">
+                    <table id="users_table" class="table table-responsive table-condensed table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col">Name</th>
@@ -40,12 +40,19 @@
                             @endforeach
                         </tbody>
                     </table>
-                    {{ $users->links() }}
-
                 </div>
             </div>
         </div>
     </main>
 </div>
-
+<script>
+    $(document).ready(function () {
+        $('#users_table').DataTable({
+            pageLength: 5,
+            lengthMenu: [
+                [5, 10, 20, -1], [5, 10, 20, 'All']
+            ]
+        });
+    });
+</script>
 @endsection

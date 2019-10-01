@@ -16,10 +16,10 @@
             </div>
 
             <div class="row">
-                <div class="col-xs-12 col-sm-12 col-md-5">
-                        <img src="/images/{{ $product->image }}" class="img-thumbnail" />
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                        <img src="/images/{{ $product->image }}" class="img-thumbnail img-responsive" />
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-7">
+                <div class="col-xs-12 col-sm-12 col-md-8">
                     <div class="form-group">
                         <strong>Title:</strong>
                         {{ $product->title }}

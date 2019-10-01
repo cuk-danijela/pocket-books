@@ -60,7 +60,7 @@ class ProductController extends Controller
             ]
         );
 
-        return redirect()->route('products.index')
+        return redirect()->route('home')
             ->with('success', 'Product created successfully.');
     }
 
@@ -117,7 +117,7 @@ class ProductController extends Controller
             ]
         );
 
-        return redirect()->route('products.index')
+        return redirect()->route('home')
             ->with('success', 'Product updated successfully');
     }
 
@@ -131,7 +131,7 @@ class ProductController extends Controller
     {
         $product->delete();
 
-        return redirect()->route('products.index')
+        return redirect()->route('home')
             ->with('success', 'Product deleted successfully');
     }
 }

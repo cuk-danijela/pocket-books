@@ -24,7 +24,7 @@ Route::get('/admin', function () {
 })->middleware(['auth', 'auth.admin']);
 
 Route::resource('products', 'ProductController');
-
+Route::resource('customsearch', 'CustomSearchContoller');
 // Route::resource('/users', 'Admin\UserController', ['except' => 'show', 'create', 'store']);
 
 Route::namespace('Admin')->prefix('admin')->middleware(['auth', 'auth.admin'])->name('admin.')->group(function () {

@@ -25,9 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $products = DB::table('products')->distinct()->get();
-
-        // $products = Product::latest()->paginate(5);
+        $products = DB::table('products')->get();
 
         return view('home', compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);

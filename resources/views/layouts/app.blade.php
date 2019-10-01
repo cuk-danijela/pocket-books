@@ -4,22 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}"> <!-- CSRF Token -->
     <title>Pocket Book - @yield('title')</title>
-
-    <!-- Scripts -->
-    <script src="https://kit.fontawesome.com/a6601da356.js" crossorigin="anonymous"></script>
-    <script src="{{ asset('js/app.js') }}"></script>
-
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"> </script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a6601da356.js"></script> <!-- Font Awesome -->
+
 
     <!-- Styles -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap.min.css" />
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
@@ -31,12 +31,14 @@
             </nav>
             <h1>@yield('title')</h1>
         </header>
-
-        <main class="py-4 container">
+        <div class="flex-center position-ref full-height">
+        <main class="main">
+            <div class="container">
             @include('partials.alerts')
             @yield('content')
+            </div>
         </main>
-
+        </div>
         <footer class="footer">
             <div class="container collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Right Side Of Navbar -->
@@ -77,12 +79,8 @@
                         <li class="nav-item">
                             <a href="{{ route('admin.users.index') }}">Manage Users</a>
                         </li>
-                        @else
-                        Hello standard user
                         @endif
                         @endif
-
-
                         <li> <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }} </a>
@@ -97,6 +95,7 @@
             </div>
         </footer>
     </div>
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
 </body>
 
 </html>
