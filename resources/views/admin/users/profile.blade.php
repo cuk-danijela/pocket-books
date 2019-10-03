@@ -15,11 +15,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-md-4">
+                     <img src="{{ asset('img/user.png') }}" class="img-circle img-responsive" alt="User Image" />
+                </div>
+                <div class="col-md-8">
+                    <h3>Hello, {{ Auth::user()->name }} </h3><br/>
+                    <p> Your e-mail address is <b>{{ Auth::user()->email }}</b>.</p><br/>
 
-                    {{-- Full name: {{ $user->name }} --}}
-                    {{-- E-mail address: {{ $user->email }} --}}
-
+                    {{-- <div class="form-group">
+                        <label class="col-md-3">Select Image:</label>
+                        <div class="col-md-8">
+                            <input type="file" name="image" value=""/>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
+                        <button type="submit" class="btn btn-primary"><i class="far fa-save"></i> Change Profile Image</button>
+                    </div> --}}
                 </div>
             </div>
         </div>

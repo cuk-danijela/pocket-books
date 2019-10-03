@@ -31,14 +31,14 @@
             </nav>
             <h1>@yield('title')</h1>
         </header>
-        <div class="flex-center position-ref full-height">
-        <main class="main">
-            <div class="container">
+        {{-- <div class="flex-center position-ref full-height"> --}}
+        {{-- <main class="main"> --}}
+            <div class="">
             @include('partials.alerts')
             @yield('content')
             </div>
-        </main>
-        </div>
+        {{-- </main> --}}
+        {{-- </div> --}}
         <footer class="footer">
             <div class="container collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Right Side Of Navbar -->
@@ -69,7 +69,7 @@
                     @endimpersonate
                 </ul>
                 <div class="dropdown pull-right" aria-labelledby="navbarDropdown">
-                    <button class="btn dropdown-toggle" type="button" style="margin:0" data-toggle="dropdown"><i
+                    <button class="btn dropdown-toggle" type="button" style="margin: 0 20px;" data-toggle="dropdown"><i
                             class="far fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span></button>
                     <ul class="dropdown-menu user_menu">
                         <li><a class="dropdown-item" href="{{ route('admin.users.profile') }}"> {{ __('Profile') }} </a></li>

@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -23,7 +23,7 @@ Route::get('/admin', function () {
     return "Admin";
 })->middleware(['auth', 'auth.admin']);
 
-Route::get('admin/users/profile', 'Admin\UserController@profile')->name('admin.users.profile');
+Route::get('admin/users/profile', 'Admin\UserController@profile')->name('admin.users.profile')->middleware('verified');
 
 Route::resource('products', 'ProductController');
 // Route::resource('/users', 'Admin\UserController', ['except' => 'show', 'create', 'store']);

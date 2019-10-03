@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Role;
+use DB;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -22,7 +23,10 @@ class UserController extends Controller
 
     public function profile()
     {
-        return view('admin.users.profile');
+        $users = DB::table('users')->get();
+
+        return view('admin.users.profile', compact('users'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
