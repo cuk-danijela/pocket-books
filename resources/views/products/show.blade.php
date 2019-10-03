@@ -21,16 +21,15 @@
                 </div>
                 <div class="col-xs-12 col-sm-12 col-md-8">
                     <div class="form-group">
-                        <strong>Title:</strong>
-                        {{ $product->title }}
+                        <strong><h2>{{ $product->title }}</h2></strong>
                     </div>
                     <div class="form-group">
-                        <strong>Author:</strong>
-                        {{ $product->author }}
+                        <h4>- {{ $product->author }}</h4>
+
                     </div>
                     <div class="form-group">
-                        <strong>Description:</strong>
-                        {{ $product->description }}
+                        <p>{{ $product->description }}</p>
+
                     </div>
                     <div class="form-group">
                         <strong>Released:</strong>

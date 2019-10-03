@@ -31,7 +31,7 @@
                             @csrf
                              @if (Route::has('login'))
                                 @auth
-                               <h5 class="align-center"><strong>You are login as {{ Auth::user()->name }}!</strong></h5>
+                               <h5 class="align-center"><strong>You are login as {{ Auth::user()->name }}</strong></h5>
                                 <a href="{{ url('/home') }}">
                                     <button type="submit" class="btn btn-primary btn-block"> {{ __('Go back to home') }}</button></a>
                                     @else

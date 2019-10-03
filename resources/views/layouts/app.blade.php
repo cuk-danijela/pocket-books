@@ -72,7 +72,7 @@
                     <button class="btn dropdown-toggle" type="button" style="margin:0" data-toggle="dropdown"><i
                             class="far fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span></button>
                     <ul class="dropdown-menu user_menu">
-                        <li><a class="dropdown-item" href="#"> {{ __('Profile') }} </a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin.users.profile') }}"> {{ __('Profile') }} </a></li>
                         <li><a class="dropdown-item" href="#"> {{ __('Help') }} </a></li>
                         @if (auth()->check())
                         @if (auth()->user()->isAdmin())

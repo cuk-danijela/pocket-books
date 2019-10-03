@@ -17,9 +17,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index')->with('users', User::paginate(10));
+        return view('admin.users.index')->with('users', User::paginate(60));
     }
 
+    public function profile()
+    {
+        return view('admin.users.profile');
+    }
 
     /**
      * Show the form for editing the specified resource.
