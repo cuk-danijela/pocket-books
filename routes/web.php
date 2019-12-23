@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes(['verify' => true]);
 
+Route::get('/firebase','FirebaseController@index');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin', function () {
