@@ -23,14 +23,14 @@ class FirebaseController extends Controller
 
         $database = $firebase->getDatabase();
 
-        $newPost = $database
-        ->getReference('blog/posts')
-        ->push([
-        'title' => 'Laravel FireBase Tutorial' ,
-        'category' => 'Laravel'
-        ]);
-        echo '<pre>';
-        print_r($newPost->getvalue());
+        // $newPost = $database
+        // ->getReference('blog/posts')
+        // ->push([
+        // 'title' => 'Laravel FireBase Tutorial' ,
+        // 'category' => 'Laravel'
+        // ]);
+        // echo '<pre>';
+        // print_r($newPost->getvalue());
     }
 
 }
