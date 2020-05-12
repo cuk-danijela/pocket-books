@@ -24,6 +24,7 @@
         "vue": "^2.5.17"
     },
     "dependencies": {
+        "minimist": "^1.2.5",
         "serialize-javascript": "^2.1.2"
     }
 }
