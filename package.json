@@ -24,8 +24,13 @@
         "vue": "^2.6.14"
     },
     "dependencies": {
+        "ansi-html": "0.0.7",
+        "color-string": "^1.9.0",
         "kind-of": "^6.0.3",
         "minimist": "^1.2.5",
-        "serialize-javascript": "^2.1.2"
+        "nth-check": "^2.0.1",
+        "path-parse": "^1.0.7",
+        "serialize-javascript": "^2.1.2",
+        "ws": "^8.4.0"
     }
 }
