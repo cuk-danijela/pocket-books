@@ -29,7 +29,7 @@
         "glob-parent": "^6.0.2",
         "is-svg": "^4.3.2",
         "kind-of": "^6.0.3",
-        "minimist": "^1.2.5",
+        "minimist": "^1.2.6",
         "nth-check": "^2.0.1",
         "object-path": "^0.11.8",
         "path-parse": "^1.0.7",
